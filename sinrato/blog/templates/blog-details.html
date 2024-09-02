@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+
+{% block content %}
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area mb-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{ url 'index' }">{% translate 'Home' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% translate 'Blog details' %}</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+   <!-- blog wrapper start -->
+   <div class="blog-area-wrapper pt-40 pb-70">
+       <div class="container-fluid">
+           <div class="row">
+                <div class="col-lg-3">
+                    <div class="shop-sidebar-inner mb-30">
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>{% translate 'Categories' %}</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">Categories 1 (05)</a></li>
+                                        <li><a href="#">Categories 2 (03)</a></li>
+                                        <li><a href="#">Categories 3 (10)</a></li>
+                                        <li><a href="#">Categories 4 (02)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>Recent post</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">blog image post</a></li>
+                                        <li><a href="#">Post with gallery</a></li>
+                                        <li><a href="#">Post with Audio</a></li>
+                                        <li><a href="#">Post with Video</a></li>
+                                        <li><a href="#">Maecenas ultricies</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>Blog archives</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">March 2019 (02)</a></li>
+                                        <li><a href="#">December 2019 (01)</a></li>
+                                        <li><a href="#">April 2019 (05)</a></li>
+                                        <li><a href="#">September 2017 (02)</a></li>
+                                        <li><a href="#">January 2019 (03)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>Tag</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="blog-tag-line">
+                                    <a href="#">fashion</a>
+                                    <a href="#">cloath</a>
+                                    <a href="#">camera</a>
+                                    <a href="#">laptop</a>
+                                    <a href="#">bag</a>
+                                    <a href="#">watch</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                    </div>
+                    <!-- sidebar promote picture start -->
+                    <div class="single-sidebar mb-30">
+                        <div class="sidebar-thumb">
+                            <a href="#"><img src="{% static 'assets/img/banner/img-static-sidebar.jpg' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- sidebar promote picture end -->
+                </div>
+               <div class="col-lg-9 order-first order-lg-last">
+                   <div class="blog-wrapper-inner">
+                        <div class="single-blogg-item mb-30">
+                            <div class="blogg-thumb">
+                                <a href="{ url 'blogdetail'}">
+                                    <img src="{{ blog.image.url }}" alt="">
+                                </a>
+                            </div>
+                            <div class="blogg-content">
+                                <span class="post-date">{{blog.created}}</span>
+                                <h5>{{blog.title}}</h5>
+                                <p class="blog-desc">{{blog.content}}</p>
+                                <div class="blogg-meta mb-30 mt-30">
+                                    / Tags:
+                                    {% for tag in tags %}
+                                    <a href="#">{{ tag.name }}</a>
+                                    {% endfor%}
+                                </div>
+                                <div class="blog-social-sharing mb-40">
+                                    <h3>Share this post</h3>
+                                    <ul class="mt-10">
+                                        <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#" title="Facebook"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" title="Facebook"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a href="#" title="Facebook"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#" title="Facebook"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="blogg-author-info">
+                                    {% for author in authors %}
+                                    <div class="author-info">
+                                        <h3>about the author:<a href="#">{{ author.name }}</a> </h3>
+                                        <p>{{ author.description }}</p>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-comment-area">
+                            <div class="all-p-title">
+                                <h3>Add comment</h3>
+                            </div>
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <button class="btn btn-primary"  type="submit">Submit</button>
+
+                            </form>
+                        </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- blog wrapper end -->
+   
+   <!-- scroll to top -->
+   <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div> <!-- /End Scroll to Top -->
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block content %}
+
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area mb-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12"> 
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'index' %}">{% translate 'Home'%}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% translate 'Blog' %}</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+   <!-- blog wrapper start -->
+   <div class="blog-area-wrapper pt-30 pb-40">
+       <div class="container-fluid">
+           <div class="row">
+               <div class="col-lg-9">
+                   <div class="blog-wrapper-inner">
+                       <div class="row">
+                        <div class="col-lg-9 col-md-9 col-12">
+                            {% for blog in allblogs %}
+                            <div class="single-bolg">
+                                <div class="post-format-area">
+                                    <div class="b-slide-all owl-carousel">
+                                    {% if blog.category.name == 'Image' %}
+                                        <img style="height:300px; width:500px;" src="{{blog.file.url}} " alt="">
+                                    {% elif blog.category.name == 'Video' %}
+                                      <video style="width: 500px;height: 300px; margin-left: -335px;"  controls>
+                                        <source  src="{{ blog.file.url }}" type="video/mp4">
+                                    </video>
+                                    {% elif blog.category.name == 'Audio' %}
+                                      <audio style="width:800px ;" controls> 
+                                        <source src="{{ blog.file.url}}" type="audio/mpeg">
+                                      </audio>
+                                    {% endif %}
+    
+                                        <!-- <img src="{% static 'img/blog/2.jpg' %}" alt="">
+                                        <img src="{% static 'img/blog/3.jpg' %}" alt=""> -->
+                                    </div>
+                                </div>
+                                <div class="entry-header-area">
+                                    {% if blog.category.name == 'Image' %}
+                                    <div class="post-types">
+                                        <i class="fa fa-picture-o"></i>
+                                    </div>
+                                    {% elif blog.category.name == 'Video' %}
+                                    <div class="post-types">
+                                        <i class="fa fa-video-camera"></i>
+                                    </div>
+                                    {% elif blog.category.name == 'Audio' %}
+                                     <div class="post-types">
+                                        <i class="fa fa-music"></i>
+                                    </div>
+                                    {% endif %}
+                                    <div class="info-blog">
+                                        <div class="single-b-info category-name">
+                                            <i class="fa fa-folder-open-o"></i>
+                                                {{blog.category.name}}
+                                        </div>
+                                        <div class="single-b-info createdby">
+                                            <i class="fa fa-user"></i>
+                                            <span>{{blog.author}}</span>
+                                        </div>
+                                        <h2 class="name">
+                                            <a href="/blog_details/{{blog.id}}">{{blog.title}}</a>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <p>{{blog.author.description}}</p>
+                                
+                                </div>
+                            {% endfor %}
+                        </div>
+                        </div>
+                   </div>
+                   <div class="paginatoin-area text-center pt-40">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="pagination-box">
+                                    <li><a class="Previous" href="#">{% translate 'Previous' %}</a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li>
+                                      <a class="Next" href="#"> {% translate 'Next' %} </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+               </div>
+               <div class="col-lg-3">
+                    <div class="shop-sidebar-inner mb-30">
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>{% translate 'Categories' %}</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">Categories 1 (05)</a></li>
+                                        <li><a href="#">Categories 2 (03)</a></li>
+                                        <li><a href="#">Categories 3 (10)</a></li>
+                                        <li><a href="#">Categories 4 (02)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>{% translate 'Recent post' %}</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">blog image post</a></li>
+                                        <li><a href="#">Post with gallery</a></li>
+                                        <li><a href="#">Post with Audio</a></li>
+                                        <li><a href="#">Post with Video</a></li>
+                                        <li><a href="#">Maecenas ultricies</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>{% translate 'Blog archives' %}</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="filter-attribute-container">
+                                    <ul>
+                                        <li><a class="active" href="#">March 2019 (02)</a></li>
+                                        <li><a href="#">December 2019 (01)</a></li>
+                                        <li><a href="#">April 2019 (05)</a></li>
+                                        <li><a href="#">September 2017 (02)</a></li>
+                                        <li><a href="#">January 2019 (03)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                        <!-- categories filter start -->
+                        <div class="single-sidebar mb-45">
+                            <div class="sidebar-inner-title mb-25">
+                                <h3>{% translate 'Tag' %}</h3>
+                            </div>
+                            <div class="sidebar-content-box">
+                                <div class="blog-tag-line">
+                                    <a href="#">fashion</a>
+
+                                    <a href="#">cloath</a>
+                                    <a href="#">camera</a>
+                                    <a href="#">laptop</a>
+                                    <a href="#">bag</a>
+                                    <a href="#">watch</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- categories filter end -->
+                    </div>
+                    <!-- sidebar promote picture start -->
+                    <div class="single-sidebar mb-30">
+                        <div class="sidebar-thumb">
+                            <a href="#"><img src="{% static 'assets/img/banner/img-static-sidebar.jpg' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- sidebar promote picture end -->
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- blog wrapper end -->
+
+   <!-- scroll to top -->
+   <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div> <!-- /End Scroll to Top -->
+
+   
+{% endblock %}

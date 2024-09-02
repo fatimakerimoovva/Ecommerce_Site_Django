@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- breadcrumb area start -->
+    <div class="breadcrumb-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+    <!-- Start of wishlist Wrapper -->
+    <div class="wishlist-wrapper mb-55">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <main id="primary" class="site-main">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="section-title">
+                                        <h3>Wishlist</h3>
+                                    </div>
+                                    <form action="#">
+                                        <div class="table-responsive text-center wishlist-style">
+                                            <table class="table table-bordered">
+                                                <tbody id ='wishlist-products'>
+                                                    <tr>
+                                                        <td>Image</td>
+                                                        <td>Product Name</td>
+                                                        <td>Model</td>
+                                                        <td>Unit Price</td>
+                                                    </tr>
+                                                    {% for product in wishlist.product.all %}
+                                                    <tr>
+                                                        <td class = 'th-delete' class="sop-icon" data-id ='{{product.pk}}' style="cursor: pointer;">
+                                                            <i class="fa fa-times"></i>
+                                                        </td>
+                                                        <td class="sop-cart">
+                                                            <a href="{{product.get_absolute_url}}"><img style="width: 100px;" class="primary-image" alt="" src="{{product.cover_image.url}}"></a>
+                                                        </td>
+                                                        <td class="sop-cart"><a href="{{product.get_absolute_url}}">{{product.product.title}}-{{product.color.name}}</a></td>
+                                                        <td class="sop-cart">{{product.product.price}}$</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                                        
+                                            </table>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> <!-- end of wishlist -->
+                    </main> <!-- end of #primary -->
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div>
+    <!-- End of wishlist Wrapper -->
+
+   <!-- scroll to top -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div> <!-- /End Scroll to Top -->
+    <script src="{% static '/assets/js/basket.js' %}"></script>
+    {% endblock %}
