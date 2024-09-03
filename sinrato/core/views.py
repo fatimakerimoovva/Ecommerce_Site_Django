@@ -32,3 +32,20 @@ class SearchView(ListView):
         else:
             multiple = Product.objects.all()
         return multiple
+    
+class IndexView(ListView):
+    model= Product
+    paginate_by = 8
+    template_name ='index.html'
+    context_object_name='product'
+    def get_queryset(self):
+        cat=self.request.GET.get('categories')
+        if cat:
+            return Product.objects.filter(category__name=cat)
+        else:
+            return Product.objects.all()
+    def get_context_data(self, **kwargs,):
+        context= super().get_context_data(**kwargs)
+        context['blogs']=Blogs.objects.order_by('created')
+        context['products']=Product.objects.order_by('created')
+        return context

@@ -24,8 +24,8 @@ class Tags(BaseModel):
         verbose_name_plural = 'Tags'
         
 
-class BlogType(BaseModel):
-    types = models.CharField(max_length=20 , verbose_name = 'Type of the blog')
+class BlogType(models.Model):
+    name = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = 'Type'
@@ -33,7 +33,7 @@ class BlogType(BaseModel):
 
     
     def __str__(self):
-        return self.types       
+        return self.name       
 
 class Blogs(BaseModel):
     
@@ -44,6 +44,7 @@ class Blogs(BaseModel):
     tags = models.ManyToManyField(Tags, max_length=10, related_name='tag_of_blog')
     is_published = models.BooleanField(default=False, verbose_name='Is published?')
     cover_image = models.ImageField(upload_to='blog/cover_image', verbose_name='Cover image of the blog', help_text='Upload a cover image for the blog', null=True, blank=True)
+
     class Meta:
         verbose_name = 'Blog'
         verbose_name_plural = 'Blogs'
@@ -52,19 +53,18 @@ class Blogs(BaseModel):
         return self.title
 
 
-# class Comment(BaseModel):
-#     name = models.CharField(max_length=100 , verbose_name='Name of the commenter' )
-#     email = models.EmailField(max_length=100 , verbose_name='Email')
-#     title = models.CharField(max_length=100 , verbose_name='Title of the comment')
-#     comments = models.TextField()
-#     blog_id = models.ForeignKey(Blogs , on_delete=models.CASCADE , related_name='com' )
+class Comment(BaseModel):
+    coments = models.TextField(verbose_name= 'Bloga comment elave et: ')   
+    name = models.CharField(max_length=255,verbose_name='Name: ') 
+    email = models.EmailField(verbose_name='Email: ') 
+    blog = models.ForeignKey(Blogs, on_delete=models.CASCADE)
 
-#     class Meta:
-#         verbose_name = 'Comment'
-#         verbose_name_plural = 'Comments'
-    
-#     def __str__(self):
-#         return self.title 
+    class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
+        
+    def __str__(self):
+        return self.name
     
     
     

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blogs, Author,Tags, BlogType
+from .models import Blogs, Author,Tags, BlogType,Comment
 from django.utils.html import format_html
 admin.site.site_header = 'Sinrato Admin Panel' 
 admin.site.site_title = 'Sinrato'
@@ -38,6 +38,6 @@ class DescriptionAdmin(admin.ModelAdmin):
 admin.site.register(Blogs, BlogAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Tags, TagsAdmin)
-# admin.site.register(Comment)
+admin.site.register(Comment) 
 admin.site.register(BlogType)
 

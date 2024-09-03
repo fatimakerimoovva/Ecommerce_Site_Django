@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-31 16:33+0400\n"
+"POT-Creation-Date: 2024-09-03 15:50+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Blog details"
 msgstr ""
 
-#: .\blog\templates\blog-details.html:35 .\blog\templates\blog.html:83
+#: .\blog\templates\blog-details.html:35 .\blog\templates\blog.html:111
 msgid "Categories"
 msgstr ""
 
@@ -34,31 +34,51 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: .\blog\templates\blog.html:65
+#: .\blog\templates\blog.html:93
 msgid "Previous"
 msgstr ""
 
-#: .\blog\templates\blog.html:71
+#: .\blog\templates\blog.html:99
 msgid "Next"
 msgstr ""
 
-#: .\blog\templates\blog.html:100
+#: .\blog\templates\blog.html:127
 msgid "Recent post"
 msgstr ""
 
-#: .\blog\templates\blog.html:118
-msgid "Blog archives"
-msgstr ""
-
-#: .\blog\templates\blog.html:136
+#: .\blog\templates\blog.html:138
 msgid "Tag"
 msgstr ""
 
-#: .\sinrato\settings.py:133
+#: .\core\templates\base.html:58
+msgid "My Account"
+msgstr ""
+
+#: .\core\templates\base.html:60
+msgid "Register"
+msgstr ""
+
+#: .\core\templates\base.html:61
+msgid "Login"
+msgstr ""
+
+#: .\core\templates\base.html:66
+msgid "Logout"
+msgstr ""
+
+#: .\core\templates\base.html:128
+msgid "wishlist"
+msgstr ""
+
+#: .\core\templates\base.html:131
+msgid "my cart"
+msgstr ""
+
+#: .\sinrato\settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\sinrato\settings.py:134
+#: .\sinrato\settings.py:140
 msgid "Azərbaycan"
 msgstr ""
 

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% load static  i18n %}
 
 {% block content %}
     <!-- slider area start -->
@@ -11,9 +11,9 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-8">
                             <div class="slider-text">
-                                <h1>New Range Of<br>sumsang Camera</h1>
+                                <h1>{% translate 'New Range Of' %}<br>{% translate 'sumsang Camera' %}</h1>
                                 <p>sumsang EOS600D/Kiss X5</p>
-                                <a class="btn-1 home-btn" href="#">shop now</a>
+                                <a class="btn-1 home-btn" href="#">{% translate 'shop now' %}</a>
                             </div>
                         </div>
                     </div>
@@ -991,131 +991,7 @@
     </div>
     <!-- home banner statics end -->
 
-    <!-- featured categories area start -->
-    <div class="featured-categories-area">
-        <div class="container-fluid">
-            <div class="section-title hm-12">
-                <h3><span>Featured</span> product</h3>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="featured-cat-active owl-carousel owl-arrow-style">
-                        <div class="pro-layout-two-single-item">
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Audio & Home Theater</a></h4>
-                                    <p class="total-items"> 9 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img1.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Cellphones & Accessories</a></h4>
-                                    <p class="total-items"> 6 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img2.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                        </div> <!-- </ end single item -->
-                        <div class="pro-layout-two-single-item">
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Camera, Photo & Video</a></h4>
-                                    <p class="total-items"> 5 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img3.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Audio & Home Theater</a></h4>
-                                    <p class="total-items"> 12 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img4.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                        </div> <!-- </ end single item -->
-                        <div class="pro-layout-two-single-item">
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Smart Watch & Accessories</a></h4>
-                                    <p class="total-items"> 10 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img5.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Laptop & Computere</a></h4>
-                                    <p class="total-items"> 18 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img6.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                        </div> <!-- </ end single item -->
-                        <div class="pro-layout-two-single-item">
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Headphones & Accessories</a></h4>
-                                    <p class="total-items"> 0 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img7.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Network Devices</a></h4>
-                                    <p class="total-items"> 5 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img8.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                        </div> <!-- </ end single item -->
-                        <div class="pro-layout-two-single-item">
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Video Games Cosoles</a></h4>
-                                    <p class="total-items"> 0 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img9.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="product-layout-two mb-30">
-                                <div class="product-layout-info">
-                                    <h4 class="pro-name"><a href="{% url 'product' %}">Quadcopters & Accessories</a></h4>
-                                    <p class="total-items"> 4 products </p>
-                                    <a href="{% url 'product' %}" class="shop-btn">+ shop now</a>
-                                </div>
-                                <div class="product-layout-thumb">
-                                    <a href="{% url 'product' %}"><img src="{% static 'assets/img/product/pro-layout-img10.jpg' %}" alt=""></a>
-                                </div>
-                            </div>
-                        </div> <!-- </ end single item -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- featured categories area end -->
+    \
 
     <!-- home product module three start -->
     <div class="home-module-three hm-1 fix pb-40">
@@ -1147,502 +1023,53 @@
                                     </a>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->               
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-2.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-3.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_sale">
-                                            <span></span>
+                        </div> 
+                                      
+                        <div class="shop-product-wrap grid row" id="shop-product">   
+                            {% for product in products %}
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="product-thumb">
+                                        <a href="">
+                                            <img src="{{ product.product_version.first.cover_image.url }}" class="pri-img" alt="">
+                                        </a>
+                                        <div class="box-label">
+                                            {% if product.new %}
+                                            <div class="label-product label_new">
+                                                <span>new</span>
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">office uses  Wireless Speaker</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£10.00</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-4.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-5.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
+                                    <div class="product-caption">
+                                        <div class="manufacture-product">
+                                            <p><a href="">{{ product.manufacturer.name }}</a></p>
+                                        </div>
+                                        <div class="product-name">
+                                            <h4><a href="">{{ product.title }}</a></h4>
+                                        </div>
+                                        
+                                        <div class="price-box">
+                                            {% if product.sale %}
+                                                <span class="special-price">{{ product.price }}</span>
+                                                <span class="old-price">{{ product.old_price }}</span>
+                                            {% else %}
+                                                <span class="special-price">{{ product.price }}</span>
+                                            {% endif %}
+                                        </div><br>
+                                        <div class="product-icon">
+                                            <ul class = 'd-flex'>
+                                                <li class = 'wishlist' data-id = "{{product.product_version.first.pk}}"><i  data-id = "{{product.product_version.first.pk}} "class="fa fa-heart"></i></li>
+                                                <li class="basket" style='cursor:pointer; margin-left: 10px' data-id = "{{product.product_version.first.pk}}"><i data-id = "{{product.product_version.first.pk}}"></i>Add to Cart</li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">jony</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">sumsang XB10 Portable headphone</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£60.99</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->        
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-6.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-7.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                        <div class="label-product label_sale">
-                                            <span>-20%</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">jony XB10  Wireless color printer</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                        <span class="old-price"><del>£60.00</del></span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-8.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-9.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">walton smart watch with blutooth</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£99.99</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-10.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-11.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                        <div class="label-product label_sale">
-                                            <span>-8%</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">Nokia</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">Nokia smart phone with 32gb rom</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price"><span class="special-price">£78.99</span></span>
-                                        <span class="old-price"><del>£99.99</del></span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-12.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-13.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">walton Portable  Wireless Speaker</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£33.33</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->        
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-14.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-1.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">jamuna XB10 Portable  Speaker</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£30.31</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-5.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-6.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                        <div class="label-product label_sale">
-                                            <span>-12%</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">walton</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">jony XB10  Wireless Speaker</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price"><span class="special-price">£50.00</span></span>
-                                        <span class="old-price"><del>£60.00</del></span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-7.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-8.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_sale">
-                                            <span>-15%</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">Apple iPhone SE 16GB memory rom Factory</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£25.50</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-11.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-6.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">jony XB10 Portable  Speaker</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£32.18</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->        
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-8.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-2.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_sale">
-                                            <span>-25%</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">Apple iPad with Retina ready Display</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price"><span class="special-price">£30.3</span></span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
-                        <div class="col mb-30">
-                            <div class="product-item">
-                                <div class="product-thumb">
-                                    
-                                        <img src="{% static 'assets/img/product/product-9.jpg' %}" class="pri-img" alt="">
-                                        <img src="{% static 'assets/img/product/product-12.jpg' %}" class="sec-img" alt="">
-                                    </a>
-                                    <div class="box-label">
-                                        <div class="label-product label_new">
-                                            <span>new</span>
-                                        </div>
-                                    </div>
-                                    <div class="action-links">
-                                        <a href="#" title="Wishlist"><i class="lnr lnr-heart"></i></a>
-                                        <a href="#" title="Compare"><i class="lnr lnr-sync"></i></a>
-                                        <a href="#" title="Quick view" data-bs-target="#quickk_view" data-bs-toggle="modal"><i class="lnr lnr-magnifier"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="manufacture-product">
-                                        <p><a href="{% url 'product' %}">apple</a></p>
-                                    </div>
-                                    <div class="product-name">
-                                        <h4><a href="{%
-     url 'product_detail' product.pk %}">Amazon Cloud Cam  Security Camera</a></h4>
-                                    </div>
-                                    <div class="ratings">
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                        <span><i class="lnr lnr-star"></i></span>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="regular-price">£00.00</span>
-                                    </div>
-                                    <button class="btn-cart" type="button">add to cart</button>
-                                </div>
-                            </div>
-                        </div> <!-- single item end -->
+                                </div>  
+                            {% endfor %}                           
+                        </div>
+                         
                     </div>
                 </div>
-                <div class="tab-pane" id="module-two" role="tabpanel" aria-labelledby="module-two-tab">
+                <!-- <div class="tab-pane" id="module-two" role="tabpanel" aria-labelledby="module-two-tab">
                     <div class="module-four-wrapper custom-seven-column row">
                         <div class="col col-2 mb-30">
                                 <div class="product-item">
@@ -1652,7 +1079,7 @@
                                         </a>
                                     </div>
                                 </div>
-                        </div> <!-- single item end -->  
+                        </div>  
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1692,7 +1119,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->                   
+                        </div>                   
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1736,7 +1163,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1776,7 +1203,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1816,7 +1243,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1860,7 +1287,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1900,7 +1327,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end --> 
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1940,7 +1367,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->  
+                        </div>  
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -1980,7 +1407,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->      
+                        </div>      
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2020,7 +1447,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2064,7 +1491,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2104,7 +1531,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2144,10 +1571,10 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->        
+                        </div>        
                     </div>
-                </div>
-                <div class="tab-pane" id="module-three" role="tabpanel" aria-labelledby="module-three-tab">
+                </div> -->
+                <!-- <div class="tab-pane" id="module-three" role="tabpanel" aria-labelledby="module-three-tab">
                     <div class="module-four-wrapper custom-seven-column row">
                         <div class="col col-2 mb-30">
                             <div class="product-item">
@@ -2157,7 +1584,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->  
+                        </div>  
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2197,7 +1624,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->                    
+                        </div>                    
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2241,7 +1668,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2285,7 +1712,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2325,7 +1752,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end --> 
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2365,7 +1792,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->        
+                        </div>        
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2409,7 +1836,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2449,7 +1876,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2489,7 +1916,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2529,7 +1956,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->  
+                        </div>  
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2569,7 +1996,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->      
+                        </div>      
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2609,7 +2036,7 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                         <div class="col mb-30">
                             <div class="product-item">
                                 <div class="product-thumb">
@@ -2649,9 +2076,9 @@
                                     <button class="btn-cart" type="button">add to cart</button>
                                 </div>
                             </div>
-                        </div> <!-- single item end -->
+                        </div> 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -2704,7 +2131,7 @@
                         </div>
                     </div>
                     <div class="product-module-thumb">
-                        <a href= url 'product_detail' product.pk %}">
+                        <!-- <a href= ""> -->
                             <img src="{% static 'assets/img/product/product-14.jpg' %}" alt="">
                         </a>
                     </div>
@@ -2715,7 +2142,7 @@
                             <p><a href="{% url 'product' %}">Walton</a></p>
                         </div>
                         <div class="product-module-name">
-                            <h4><a href="{ url 'product_detail' product.pk %}">Koss Porta Pro On Ear  Headphones </a></h4>
+                            <!-- <h4><a href="{ url 'product_detail' product.pk %}">Koss Porta Pro On Ear  Headphones </a></h4> -->
                         </div>
                         <div class="ratings">
                             <span><i class="lnr lnr-star"></i></span>
@@ -3078,10 +2505,8 @@
                                 <div class="product-gallary-active owl-carousel owl-arrow-style sale-nav">
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-1.jpg' %}" class="pri-img" alt="">
-                                                <img src="{% static 'assets/img/product/product-2.jpg' %}" class="sec-img" alt="">
                                             </a>
                                             <div class="box-label">
                                                 <div class="label-product label_new">
@@ -3099,8 +2524,7 @@
                                                 <p><a href="{% url 'product' %}">apple</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span class="yellow"><i class="lnr lnr-star"></i></span>
@@ -3117,8 +2541,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-3.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-4.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3141,8 +2564,7 @@
                                                 <p><a href="{% url 'product' %}">jony</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span class="yellow"><i class="lnr lnr-star"></i></span>
@@ -3160,8 +2582,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-5.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-6.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3181,8 +2602,7 @@
                                                 <p><a href="{% url 'product' %}">sumsang</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span><i class="lnr lnr-star"></i></span>
@@ -3199,8 +2619,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-4.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-8.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3220,8 +2639,7 @@
                                                 <p><a href="{% url 'product' %}">toshiba</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span class="yellow"><i class="lnr lnr-star"></i></span>
@@ -3238,8 +2656,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-9.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-10.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3259,8 +2676,7 @@
                                                 <p><a href="{% url 'product' %}">hitachi</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span><i class="lnr lnr-star"></i></span>
@@ -3277,8 +2693,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-2.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-3.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3301,8 +2716,7 @@
                                                 <p><a href="{% url 'product' %}">apple</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span class="yellow"><i class="lnr lnr-star"></i></span>
@@ -3320,8 +2734,7 @@
                                     </div> <!-- </div> end single item -->
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="{%
-     url 'product_detail' product.pk %}">
+                                            <a href="">
                                                 <img src="{% static 'assets/img/product/product-4.jpg' %}" class="pri-img" alt="">
                                                 <img src="{% static 'assets/img/product/product-1.jpg' %}" class="sec-img" alt="">
                                             </a>
@@ -3341,8 +2754,7 @@
                                                 <p><a href="{% url 'product' %}">nokia</a></p>
                                             </div>
                                             <div class="product-name">
-                                                <h4><a href="{%
-             url 'product_detail' product.pk %}">jony XB10 Portable  Wireless Speaker</a></h4>
+                                                <h4><a href="">jony XB10 Portable  Wireless Speaker</a></h4>
                                             </div>
                                             <div class="ratings">
                                                 <span><i class="lnr lnr-star"></i></span>

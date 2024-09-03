@@ -27,10 +27,10 @@
    <div class="blog-area-wrapper pt-40 pb-70">
        <div class="container-fluid">
            <div class="row">
-                <div class="col-lg-3">
-                    <div class="shop-sidebar-inner mb-30">
+                <!-- <div class="col-lg-3">d -->
+                    <!-- <div class="shop-sidebar-inner mb-30"> -->
                         <!-- categories filter start -->
-                        <div class="single-sidebar mb-45">
+                        <!-- <div class="single-sidebar mb-45">
                             <div class="sidebar-inner-title mb-25">
                                 <h3>{% translate 'Categories' %}</h3>
                             </div>
@@ -44,10 +44,10 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- categories filter end -->
                         <!-- categories filter start -->
-                        <div class="single-sidebar mb-45">
+                        <!-- <div class="single-sidebar mb-45">
                             <div class="sidebar-inner-title mb-25">
                                 <h3>Recent post</h3>
                             </div>
@@ -62,10 +62,10 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- categories filter end -->
                         <!-- categories filter start -->
-                        <div class="single-sidebar mb-45">
+                        <!-- <div class="single-sidebar mb-45">
                             <div class="sidebar-inner-title mb-25">
                                 <h3>Blog archives</h3>
                             </div>
@@ -80,10 +80,10 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- categories filter end -->
                         <!-- categories filter start -->
-                        <div class="single-sidebar mb-45">
+                        <!-- <div class="single-sidebar mb-45">
                             <div class="sidebar-inner-title mb-25">
                                 <h3>Tag</h3>
                             </div>
@@ -97,23 +97,18 @@
                                     <a href="#">watch</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- categories filter end -->
-                    </div>
+                    <!-- </div> -->
                     <!-- sidebar promote picture start -->
-                    <div class="single-sidebar mb-30">
-                        <div class="sidebar-thumb">
-                            <a href="#"><img src="{% static 'assets/img/banner/img-static-sidebar.jpg' %}" alt=""></a>
-                        </div>
-                    </div>
+                    
                     <!-- sidebar promote picture end -->
-                </div>
+                <!-- </div> -->
                <div class="col-lg-9 order-first order-lg-last">
                    <div class="blog-wrapper-inner">
                         <div class="single-blogg-item mb-30">
                             <div class="blogg-thumb">
-                                <a href="{ url 'blogdetail'}">
-                                    <img src="{{ blog.image.url }}" alt="">
+                                    <img src="{{ blog.cover_image.url }}" alt="">
                                 </a>
                             </div>
                             <div class="blogg-content">
@@ -122,9 +117,9 @@
                                 <p class="blog-desc">{{blog.content}}</p>
                                 <div class="blogg-meta mb-30 mt-30">
                                     / Tags:
-                                    {% for tag in tags %}
-                                    <a href="#">{{ tag.name }}</a>
-                                    {% endfor%}
+                                    {% for tag in blog.tags.all %}
+                                    <a href="#">{{ tag.title }}</a>
+                                    {% endfor %}
                                 </div>
                                 <div class="blog-social-sharing mb-40">
                                     <h3>Share this post</h3>
@@ -137,24 +132,69 @@
                                     </ul>
                                 </div>
                                 <div class="blogg-author-info">
-                                    {% for author in authors %}
+                                    
                                     <div class="author-info">
-                                        <h3>about the author:<a href="#">{{ author.name }}</a> </h3>
-                                        <p>{{ author.description }}</p>
+                                        <h3>about the author:<a href="#">{{ blog.author.name }}</a> </h3>
+                                        <p>{{ blog.author.description }}</p>
                                     </div>
-                                    {% endfor %}
+                                    
                                 </div>
                             </div>
                         </div>
+                        <div class="comments-area">
+							<div class="comments-heading">
+								<h3>{{comment_count}} comments</h3>
+							</div>
+							<div class="comments-list">
+								<ul>
+									{% for comment in comments %}									
+									<!-- <li class="border border-success p-2 mb-2">
+										<div class="comment">
+											<p><strong>{{ comment.name }}</strong>:</p>
+											<span> {{ comment.coments }}</span>
+										</div>
+
+									</li> -->
+									<li class="threaded-comments">
+										<div class="comments-details">
+					
+											<div class="comments-content-wrap">
+												<span>
+													<b>{{ comment.name }}</b>
+													<span class="post-time">{{comment.created}}</span>
+													
+												</span>
+												<p>{{ comment.coments }}</p>
+											</div>
+										</div>
+									</li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div>
                         <div class="blog-comment-area">
                             <div class="all-p-title">
                                 <h3>Add comment</h3>
                             </div>
-                            <form action="" method="post">
+                            <form method="post">
                                 {% csrf_token %}
-                                {{form.as_p}}
-                                <button class="btn btn-primary"  type="submit">Submit</button>
-
+                                {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    {% if field.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in field.errors %}
+                                                <li class="alert alert-danger">{{ error }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                                <button class="custom-button" value="submit" type="submit">
+                                    <span>Post Comment</span>
+                                </button>
                             </form>
                         </div>
                    </div>

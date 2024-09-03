@@ -47,7 +47,7 @@ class Product(BaseModel):
     old_price = models.PositiveIntegerField(null = True, blank=True)
     in_sale = models.BooleanField(default=False)
     price = models.PositiveIntegerField(null = True, blank=True)
-    description = models.CharField(max_length=255)
+    description = models.TextField()
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, max_length=255, related_name='product_category')
     manufacturer = models.ForeignKey(
@@ -55,6 +55,10 @@ class Product(BaseModel):
     new = models.BooleanField(default=False)
     is_published = models.BooleanField(default=False, verbose_name='is published?')
     
+    class Meta:
+        verbose_name = 'Product '
+        verbose_name_plural = 'Product '
+
     @property
     def total_quantity(self):
         return sum([versions.quantity for versions in self.product_version.all()])
@@ -93,17 +97,23 @@ class ProductVersion(models.Model):
 
     
 class ReviewComment(BaseModel):
-    name = models.CharField(max_length=255, verbose_name='name')
-    review = models.TextField()
-    key = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_review')
     
+    quality = models.PositiveBigIntegerField()
+    price = models.PositiveBigIntegerField()
+    value = models.PositiveBigIntegerField()
+
+    nickname = models.CharField(max_length=100 , verbose_name='Nickname' )
+    summary = models.CharField(max_length=100 , verbose_name='Nickname' )
+    review =  models.TextField()
+    key = models.ForeignKey('product.Product' ,on_delete=models.CASCADE , related_name= 'product_review')
+
+
     class Meta:
         verbose_name = 'Review'
         verbose_name_plural = 'Reviews'
     
     def __str__(self):
-        return self.name
-    
+        return self.nickname 
 
 #     from django import forms
 # from django.contrib.auth.forms import UserCreationForm

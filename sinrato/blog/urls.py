@@ -3,5 +3,5 @@ from .views import BlogListView, BlogDetailView
 
 urlpatterns = [
     path('blog/', BlogListView.as_view(), name='blog'),
-    path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog-detail'),
+    path('blog_details/<int:pk>/', BlogDetailView.as_view(), name='blog-detail'),
 ]

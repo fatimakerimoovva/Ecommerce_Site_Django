@@ -31,13 +31,7 @@ function loadProducts(url) {
                                 <div class="product-name">
                                     <h4><a href="/product-detail/${version.id}">${product['title']}</a></h4>
                                 </div>
-                                <div class="ratings">
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                </div>
+                                
                                 <div class="price-box">
                                     <p>${product.in_sale ? `<span class="old-price" style="font-size: 15px;"><del>$${product.old_price}</del></span><span style="font-size: 15px; color: red; margin-left:3px;" class="special-price">$${product.price}</span>` : `$${product.price}`}</p>
                                 </div>
@@ -103,13 +97,7 @@ function loadProducts(url) {
                                 <div class="product-name">
                                     <h4><a href="/product-detail/${version.id}">${product['title']}</a></h4>
                                 </div>
-                                <div class="ratings">
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                    <span><i class="lnr lnr-star"></i></span>
-                                </div>
+                                
                                 <div class="price-box">
                                     <p>${product.in_sale ? `<span class="old-price" style="font-size: 15px;"><del>$${product.old_price}</del></span><span style="font-size: 15px; color: red; margin-left:3px;" class="special-price">$${product.price}</span>` : `$${product.price}`}</p>
                                 </div>
@@ -171,13 +159,7 @@ manufacturers.forEach((element) => {
                                         <div class="product-name">
                                             <h4><a href="">${data[i]["product"]['title']}</a></h4>
                                         </div>
-                                        <div class="ratings">
-                                            <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                            <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                            <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                            <span class="yellow"><i class="lnr lnr-star"></i></span>
-                                            <span><i class="lnr lnr-star"></i></span>
-                                        </div>
+                                        
                                         <div class="price-box">
                                             <p>${data[i]['product']['in_sale'] ? `<span class="old-price" style="font-size: 15px;"><del>$${data[i]["product"]['old_price']}</del></span><span style="font-size: 15px; color: red; margin-left:3px;" class="special-price">$${data[i]["product"]['price']}</span>` : `$${data[i]["product"]["price"]}`}</p>
                                         </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-31 16:33+0400\n"
+"POT-Creation-Date: 2024-09-03 15:50+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Blog details"
 msgstr "Blog arxivi"
 
-#: .\blog\templates\blog-details.html:35 .\blog\templates\blog.html:83
+#: .\blog\templates\blog-details.html:35 .\blog\templates\blog.html:111
 msgid "Categories"
 msgstr "Kateqoriyalar"
 
@@ -36,31 +36,51 @@ msgstr "Kateqoriyalar"
 msgid "Blog"
 msgstr ""
 
-#: .\blog\templates\blog.html:65
+#: .\blog\templates\blog.html:93
 msgid "Previous"
 msgstr "Əvvəlki"
 
-#: .\blog\templates\blog.html:71
+#: .\blog\templates\blog.html:99
 msgid "Next"
 msgstr "Sonraki"
 
-#: .\blog\templates\blog.html:100
+#: .\blog\templates\blog.html:127
 msgid "Recent post"
 msgstr "Son post"
 
-#: .\blog\templates\blog.html:118
-msgid "Blog archives"
-msgstr "Blog arxivi"
-
-#: .\blog\templates\blog.html:136
+#: .\blog\templates\blog.html:138
 msgid "Tag"
 msgstr ""
 
-#: .\sinrato\settings.py:133
+#: .\core\templates\base.html:58
+msgid "My Account"
+msgstr "Mənim hesabım"
+
+#: .\core\templates\base.html:60
+msgid "Register"
+msgstr "Qeydiyyat"
+
+#: .\core\templates\base.html:61
+msgid "Login"
+msgstr "Daxil ol"
+
+#: .\core\templates\base.html:66
+msgid "Logout"
+msgstr "Çıxış"
+
+#: .\core\templates\base.html:128
+msgid "wishlist"
+msgstr "Favorilər"
+
+#: .\core\templates\base.html:131
+msgid "my cart"
+msgstr "Səbətim"
+
+#: .\sinrato\settings.py:139
 msgid "English"
 msgstr ""
 
-#: .\sinrato\settings.py:134
+#: .\sinrato\settings.py:140
 msgid "Azərbaycan"
 msgstr ""
 
@@ -75,6 +95,9 @@ msgstr ""
 #: .\user\managers.py:33
 msgid "Superuser must have is_superuser=True."
 msgstr ""
+
+#~ msgid "Blog archives"
+#~ msgstr "Blog arxivi"
 
 #~ msgid "Submit"
 #~ msgstr "Təqdim edin"

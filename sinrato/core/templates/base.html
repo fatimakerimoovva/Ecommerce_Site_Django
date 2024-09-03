@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -50,31 +50,48 @@
                     </div>
                     <div class="col-lg-4 col-12">
                         <div class="box box-right">
-                            <ul>
+                            <ul class="d-flex">
+                                {% get_current_language as CURRENT_LANGUAGE %}
+                                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                                {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
                                 <li class="settings">
-                                    <button type="button" class="ha-toggle">My Account<span class="lnr lnr-chevron-down"></span></button>
+                                    <button type="button" class="ha-toggle">{% translate 'My Account' %}<span class="lnr lnr-chevron-down"></span></button>
                                     <ul class="box-dropdown ha-dropdown">
-                                        <li><a href="{% url 'register' %}">Register</a></li>
-                                        <li><a href="{% url 'login' %}">Login</a></li>
+                                        <li><a href="{% url 'register' %}">{% translate 'Register' %}</a></li>
+                                        <li><a href="{% url 'login' %}">{% translate 'Login' %}</a></li>
                                         {% if user.is_authenticated %}
                                         <li>
                                             <form method="post" action="{% url 'logout' %}">
                                                 {% csrf_token %}
-                                                <button type="submit" style="background:none;border:none;padding:0;margin-left:15px;color:black;">Logout</button>
+                                                <button type="submit" style="background:none;border:none;padding:0;margin-left:15px;color:black;">{% translate 'Logout' %}</button>
                                             </form>
                                         </li>
                                     {% endif %}
                                     </ul>
                                 </li>
-                                <li class="settings">
-                                    <button type="button" class="ha-toggle">Language<span class="lnr lnr-chevron-down"></span></button>
-                                    <ul class="box-dropdown ha-dropdown">
-                                        <li><a href="#">
-                                            <img src="{% static 'assets/img/icon/en.png' %}" alt=""> English</a>
+                                <!-- <li><a href=""><i></i>
+                                    {% if CURRENT_LANGUAGE == 'en' %}
+                                    <img src="https://flagcdn.com/20x15/gb.png" height="10" width="15px" alt="..">
+                                    {% else %}
+                                    <img src="https://flagcdn.com/20x15/{{ CURRENT_LANGUAGE }}.png" height="10" width="15px" alt="..">
+                                    {% endif %}
+                                
+                                </a> -->
+                                    <ul>
+                                        <li >  
+                                            {% for language in languages %}
+                                                <a href="{% if language.code == 'en' %}/{% else %}/{{language.code}}/{% endif %}" class="{% if language.code == CURRENT_LANGUAGE %}active{% endif %}" >
+                                                    {% if language.code == 'en' %}
+                                                    <img src="https://flagcdn.com/20x15/gb.png" height="10" width="15px" alt="{{ language.code }}">
+                                                    EN
+                                                    {% else %}
+                                                    <img src="https://flagcdn.com/20x15/{{ language.code }}.png" height="10" width="15px" alt="{{ language.code }}">
+                                                    AZ
+                                                    {% endif %}
+                                                </a>
+                                            {% endfor %}
                                         </li>
-                                        <li><a href="#" >
-                                            <img style="width: 20px; height: 15px" src="{% static 'assets/img/icon/aze.png' %}" alt=""> Azerbaijanian</a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                             </ul>
@@ -96,8 +113,8 @@
                             <div class="col-lg-8 col-md-8 col-12">
                                 <form  action="{% url 'search' %}">
                                        <div class="form-search s-same d-flex" >
-                                           <input name="name" class="input-text" type="text" placeholder="Search"  >
-                                           <button class="button" title="Search" type="submit" style="margin-left: 7px;">
+                                           <input name="name" class="input-text" type="text" placeholder="Search" style="width: 500px; color: black; border-radius: 5px" >
+                                           <button class="button" title="Search" type="submit" style="margin-left: 7px; background-color: #f4cc2e; border-radius: 5px; color: rgb(76, 76, 76)">
                                                <i class="fa fa-search"></i>
                                            </button>
                                         </div>
@@ -108,10 +125,10 @@
                                 <div class="mini-cart-option">
                                     <ul>
                                         <li class="wishlist">
-                                            <a class="ha-toggle" href="{% url 'wishlist' %}"><span class="lnr lnr-heart"></span>wishlist</a>
+                                            <a class="ha-toggle" href="{% url 'wishlist' %}"><span class="lnr lnr-heart"></span>{% translate 'wishlist' %}</a>
                                         </li>
                                         <li class="basket">
-                                            <a type="button" class="ha-toggle" href="{% url 'basket' %}"><span class="lnr lnr-cart" ></span>my cart</a>
+                                            <a type="button" class="ha-toggle" href="{% url 'basket' %}"><span class="lnr lnr-cart" ></span>{% translate 'my cart' %}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -170,7 +187,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="top-main-menu">
-                            <div class="categories-menu-bar">
+                            <!-- <div class="categories-menu-bar">
                                 <div class="categories-menu-btn ha-toggle">
                                     <div class="left">
                                         <i class="lnr lnr-text-align-left"></i>
@@ -258,20 +275,14 @@
                                         <li class="category-item-parent"><a class="more-btn" href="#">More Categories</a></li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> -->
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="{% url 'index' %}">HOME<span class="lnr lnr-chevron-down"></span></a>
-                                            <ul class="dropdown">
-                                                <li><a href="{% url 'index' %}">Home Version 1</a></li>
-                                                <li><a href="{% url 'index' %}">Home Version 2</a></li>
-                                                <li><a href="{% url 'index' %}">Home Version 3</a></li>
-                                                <li><a href="{% url 'index' %}">Home Version 4</a></li>
-                                            </ul>
+                                        <li><a href="{% url 'index' %}">HOME<span ></span></a>
                                         </li>
-                                        <li><a href="{% url 'product' %}">SHOP<span class="lnr lnr-chevron-down"></span></a>
-                                            <ul class="dropdown">
+                                        <li><a href="{% url 'product' %}">SHOP<span ></span></a>
+                                            <!-- <ul class="dropdown">
                                                 <li><a href="#">Shop Grid Layout <span class="lnr lnr-chevron-right"></span></a>
                                                     <ul class="dropdown">
                                                         <li><a href="{% url 'product' %}">Shop grid left sidebar</a></li>
@@ -306,27 +317,27 @@
                                                     </ul>
                                                     {% endfor %}
                                                 </li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
-                                        <li class="static"><a href="#">Pages<span class="lnr lnr-chevron-down"></span></a>
+                                        <li class="static"><a href="#">Pages<span ></span></a>
                                             <ul class="mega-menu mega-full">
-                                                <li class="mega-title"><a href="#">Column one</a>
+                                                <!-- <li class="mega-title"><a href="#">Column one</a>
                                                     <ul>
                                                         <li><a href="{% url 'product' %}">Shop grid left sidebar</a></li>
                                                         <li><a href="shop-grid-right-sidebar.html">Shop grid right sightbar</a></li>
                                                         <li><a href="shop-grid-full-width-4-column.html">Shop grid full width</a></li>
                                                         <li><a href="shop-list-full-width.html">Shop list full width</a></li>
                                                     </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Column two</a>
+                                                </li> -->
+                                                <li class="mega-title"><a href="#">Column one</a>
                                                     <ul>
                                                         <li><a href="">Check Out</a></li>
                                                         <li><a href="{% url 'basket' %}">Cart</a></li>
                                                         <li><a href="{% url 'wishlist' %}">Wishlist</a></li>
-                                                        <li><a href="compare.html">Compare</a></li>
+                                                        <!-- <li><a href="compare.html">Compare</a></li> -->
                                                     </ul>
                                                 </li>
-                                                <li class="mega-title"><a href="#">Column Three</a>
+                                                <!-- <li class="mega-title"><a href="#">Column Three</a>
                                                     {% for product in products %}
                                                     <ul>
                                                         <li><a href="{% url 'product_detail' product.pk %}">Product Details</a></li>
@@ -335,19 +346,19 @@
                                                         <li><a href="product-details-group.html">Product Details Group</a></li>
                                                     </ul>
                                                     {% endfor %}
-                                                </li>
-                                                <li class="mega-title"><a href="#">Column Four</a>
+                                                </li> -->
+                                                <li class="mega-title"><a href="#">Column two</a>
                                                     <ul>
                                                         <li><a href="{% url 'login' %}">login</a></li>
                                                         <li><a href="{% url 'register' %}">register</a></li>
                                                         <li><a href="{% url 'myaccount' %}">my account</a></li>
-                                                        <li><a href="">contact us</a></li>
+                                                        <!-- <li><a href="">contact us</a></li> -->
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{% url 'blog' %}">BLOG<span class="lnr lnr-chevron-down"></span></a>
-                                            <ul class="dropdown">
+                                        <li><a href="{% url 'blog' %}">BLOG<span ></span></a>
+                                            <!-- <ul class="dropdown">
                                                 <li><a href="blog-left-sidebar-3.html">Blog Left Sidebar 3 col</a></li>
                                                 <li><a href="blog-left-sidebar-4.html">Blog left Sidebar 4 col</a></li>
                                                 <li><a href="blog-right-sidebar-3.html">Blog Right Sidebar 3 col</a></li>
@@ -360,14 +371,14 @@
                                                 <li><a href="blog-details-gallery.html">Blog Details gallery</a></li>
                                                 <li><a href="blog-details-video.html">Blog Details video</a></li>
                                                 <li><a href="blog-details-right-sidebar.html">Blog Details right sidebar</a></li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
-                                        <li><a href="">CONTACT US</a></li>
+                                        <!-- <li><a href="">CONTACT US</a></li> -->
                                     </ul>
                                 </nav>
                             </div> <!-- </div> end main menu -->
                             <div class="header-call-action">
-                                <p><span class="lnr lnr-phone"></span>Hotline : <strong>1-001-234-5678</strong></p>
+                                <p><span class="lnr lnr-phone"></span>Hotline : <strong>+994 50-275-54-25/strong></p>
                             </div>
                         </div>
                     </div>
